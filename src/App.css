@@ -4734,6 +4734,13 @@ a.thumbnail {
 .result-visualizations .result .icon {
   background: #1779ba; }
 
+.viz-link a, .result-dataset a {
+  margin-top: .2rem;
+  display: inline-block; }
+  .viz-link a i, .result-dataset a i {
+    float: left;
+    margin-right: .5rem; }
+
 .search-enter .search-topbar {
   animation-delay: 1s; }
 

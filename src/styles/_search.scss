@@ -113,6 +113,17 @@
 	}
 }
 
+.viz-link, .result-dataset {
+	a {
+		margin-top:.2rem;
+		display: inline-block;
+		i {
+			float:left;
+			margin-right: .5rem;
+		}
+	}
+}
+
 .search-enter {
 	.search-topbar {
 		@extend .animated;

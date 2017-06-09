@@ -59,7 +59,7 @@ const questions = [
                 name: 'Tweedekamer gegevensmagazijn',
                 beschikbaar: true,
                 method: {
-                    description: "Deze data is verkrijgbaar via het <a href=\"https://gegevensmagazijn.tweedekamer.nl/OData/v1/ParlementairDocument?$filter=Soort%20eq%20%27Motie%27\">ParlementairDocument endpoint</a>"
+                    description: "Deze data is verkrijgbaar via:\n <a href=\"https://gegevensmagazijn.tweedekamer.nl/OData/v1/ParlementairDocument?$filter=Soort%20eq%20%27Motie%27\"><i class='material-icons'>grade</i>ParlementairDocument endpoint</a>"
                 },
                 availability: {
                     type: 'direct', // niet direct filterbaar (maar data is te verkrijgen)
@@ -144,7 +144,7 @@ const questions = [
                 name: 'IATI Data Ministerie van Buitenlandse Zaken',
                 beschikbaar: true,
                 method: {
-                    description: "Deze data is verkrijgbaar via <a href=\"https://www.iatiregistry.org/publisher/about/minbuza_nl\">de IATI registry</a>"
+                    description: "Deze data is verkrijgbaar via:\n<a href=\"https://www.iatiregistry.org/publisher/about/minbuza_nl\"><i class='material-icons'>grade</i>de IATI registry</a>"
                 },
                 availability: {
                     type: 'direct', // niet direct filterbaar (maar data is te verkrijgen)
@@ -167,7 +167,7 @@ const questions = [
                 name: 'IATI Data Ministerie van Buitenlandse Zaken',
                 beschikbaar: true,
                 method: {
-                    description: "Deze data is verkrijgbaar via <a href=\"https://www.iatiregistry.org/publisher/about/minbuza_nl\">de IATI registry</a>"
+                    description: "Deze data is verkrijgbaar via:\n <a href=\"https://www.iatiregistry.org/publisher/about/minbuza_nl\"><i class='material-icons'>grade</i>de IATI registry</a>"
                 },
                 availability: {
                     type: 'direct', // niet direct filterbaar (maar data is te verkrijgen)

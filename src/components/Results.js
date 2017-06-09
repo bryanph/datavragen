@@ -64,7 +64,7 @@ export class Visualization extends React.Component {
 
 	                <div className="viz-link">
 	                    <h6>Methodologie</h6>
-	                    <p>{ viz.link }</p>
+	                    <p><a href={ viz.link }><i className="material-icons">grade</i> Ga naar de website</a></p>
 	                </div>
 	            </div>
             </div>
