@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import cn from 'classnames'
 
 export class Dataset extends React.Component {
     constructor(props) {
@@ -12,10 +13,13 @@ export class Dataset extends React.Component {
 
         if (!dataset) return null
 
+
+        let dataClass = cn('icon', {green: dataset.beschikbaar})
+
         return (
             <div className="result result-dataset">
-            	<div className="icon">
-            		<i className="material-icons">group_work</i>
+            	<div className={dataClass}>
+            		<i className="material-icons">{dataset.beschikbaar ? 'check' : 'close'}</i>
             	</div>
             	<div className="set">
 	                <div className="dataset-name">
@@ -24,12 +28,14 @@ export class Dataset extends React.Component {
 
 	                <div className="dataset-method">
 	                    <h6>Methodologie</h6>
-	                    <p>{ dataset.method.description }</p>
+	                    <p dangerouslySetInnerHTML={{__html:dataset.method.description}}/>
 	                </div>
+	                {dataset.beschikbaar &&
 	                <div className="dataset-type">
 	                    <h6>Type</h6>
 	                    <p>{ dataset.availability.type }</p>
 	                </div>
+		            }
                 </div>
             </div>
         )

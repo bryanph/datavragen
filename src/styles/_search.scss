@@ -85,11 +85,14 @@
 		align-items:center;
 		justify-content: center;
 		border-radius:50%;
-		background:$medium-gray;
 		color:$white;
+		background:$alert-color;
 		margin-right: 1rem;
 		i {
 			font-size: 2rem;
+		}
+		&.green {
+			background:$success-color;
 		}
 	}
 	h5 {

@@ -4717,11 +4717,13 @@ a.thumbnail {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: #cacaca;
     color: #fefefe;
+    background: #cc4b37;
     margin-right: 1rem; }
     .result .icon i {
       font-size: 2rem; }
+    .result .icon.green {
+      background: #3adb76; }
   .result h5 {
     margin-bottom: .5rem; }
   .result h6 {

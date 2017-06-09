@@ -59,7 +59,7 @@ const questions = [
                 name: 'Tweedekamer gegevensmagazijn',
                 beschikbaar: true,
                 method: {
-                    description: "Deze data is verkrijgbaar via het \"ParlementairDocument\" endpoint: https://gegevensmagazijn.tweedekamer.nl/OData/v1/ParlementairDocument?$filter=Soort%20eq%20%27Motie%27"
+                    description: "Deze data is verkrijgbaar via het <a href=\"https://gegevensmagazijn.tweedekamer.nl/OData/v1/ParlementairDocument?$filter=Soort%20eq%20%27Motie%27\">ParlementairDocument endpoint</a>"
                 },
                 availability: {
                     type: 'direct', // niet direct filterbaar (maar data is te verkrijgen)
