@@ -60,7 +60,7 @@ const questions = [
     {
         q: 'Hoe groot is fractiediscipline dit jaar voor fractie x?',
         qf: () => `Hoe groot is fractiediscipline dit jaar voor fractie x?`
-    }
+    },
     {
         q: 'Hoeveel geeft nederland uit aan ontwikkelingsgeld in x',
         qf: (land) => `Hoeveel geeft nederland uit aan ontwikkelingsgeld in ${land}`,
