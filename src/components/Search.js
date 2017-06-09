@@ -17,6 +17,42 @@ const questionList = [
   },
 ];
 
+const questions = [
+    {
+        q: 'welke kamerleden hebben er afwijkend gestemd in het jaar x?',
+        qf: (jaar) => `welke kamerleden hebben er afwijkend gestemd in het jaar ${jaar}`,
+        detail: '', // id van de detail pagina
+        datasets: [
+            {
+                name: 'Tweedekamer gegevensmagazijn',
+                method: {
+                    description: "Deze data kan opgehaald worden door alle XML te parsen uit de REST API met de volgende filters:"
+                },
+                availability: {
+                    type: 'derived', // niet direct filterbaar (maar data is te verkrijgen)
+                }
+            }
+        ],
+        viz: [
+            {
+                name: "STEMGEDRAG TWEEDE KAMER 2013-2016 NADER BEKEKEN"
+                link: "http://www.datagraver.com/case/stemgedrag-tweede-kamer-2013-2016-nader-bekeken"
+            },
+        ]
+    },
+    {
+        q: 'Welk kamerlid heeft wetsvoorstel x voorgesteld?',
+        qf: (jaar) => () => `Welk kamerlid heeft wetsvoorstel ${x} voorgesteld?`
+    },
+    {
+        q: 'Welk kamerlid heeft motie x voorgesteld?',
+        qf: (jaar) => () => `Welk kamerlid heeft motie ${x} voorgesteld?`
+    },
+    {
+        q: 'Hoe groot is fractiediscipline dit jaar voor fractie x?',
+        qf: () => `Hoe groot is fractiediscipline dit jaar voor fractie x?`.
+    }
+]
 
 function escapeRegexCharacters(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
