@@ -101,11 +101,11 @@ class ResultPage extends React.Component {
                 </div>
                 <div className="result-datasets">
                     <span>Deze vraag kan beantwoord worden met behulp van de volgende datasets</span>
-                    { datasets.map((d) => <Dataset dataset={d}) /> }
+                    { datasets.map((d) => <Dataset dataset={d} />) }
                 </div>
                 <div className="result-visualizations">
                     <span>De volgende visualisatie bronnen zijn beschikbaar</span>
-                    { viz.map((d) => <Visualization dataset={d}) /> }
+                    { viz.map((d) => <Visualization dataset={d} />) }
                 </div>
             </div>
         )
