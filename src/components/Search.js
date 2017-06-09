@@ -43,7 +43,7 @@ const questions = [
         ],
         viz: [ // relevante visualisaties
             {
-                name: "STEMGEDRAG TWEEDE KAMER 2013-2016 NADER BEKEKEN"
+                name: "STEMGEDRAG TWEEDE KAMER 2013-2016 NADER BEKEKEN",
                 link: "http://www.datagraver.com/case/stemgedrag-tweede-kamer-2013-2016-nader-bekeken"
             },
         ]
