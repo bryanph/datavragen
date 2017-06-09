@@ -21,15 +21,13 @@ const questionList = [
   },
 ];
 
-const dimensions = {
-    YEAR: [ 2013, 2014, 2015, 2016, 2017 ],
-    KAMERLID: codelists.personen,
-    FRACTIE: codelists.partijen,
-    LAND: codelists.landen,
-    SECTOR: codelists.sector,
-    MOTIE: codelists.moties,
-    VOORSTEL: codelists.wetsvoorstellen,
-}
+const YEAR = [ 2013, 2014, 2015, 2016, 2017 ]
+const KAMERLID = codelists.personen
+const FRACTIE = codelists.partijen
+const LAND = codelists.landen
+const SECTOR = codelists.sector
+const MOTIE = codelists.moties
+const VOORSTEL = codelists.wetsvoorstellen
 
 const questions = [
     {
