@@ -90,7 +90,6 @@ class ResultPage extends React.Component {
         const { 
             q,
             varType,
-            var,
             datasets,
             viz,
         } = this.props
