@@ -109,7 +109,7 @@ function getSuggestions(value) {
     return [];
   }
 
-  const regex = new RegExp('^' + escapedValue, 'i');
+    const regex = new RegExp('.*' + escapedValue + '.*', 'i');
 
   return questionList.filter(question => regex.test(question.q));
 }
