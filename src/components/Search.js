@@ -192,7 +192,7 @@ class Search extends Component {
               value={value}
               onChange={this.onChange} 
               search={this.search}
-              suggestions={suggestions}
+              suggestions={suggestions.slice(0, 6)}
               onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
               onSuggestionsClearRequested={this.onSuggestionsClearRequested}
               inputProps={inputProps}
