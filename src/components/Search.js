@@ -17,11 +17,19 @@ const questionList = [
   },
 ];
 
+const dimensions = {
+    YEAR: "YEAR",
+    KAMERLID: "KAMERLID",
+    FRACTIE: "FRACTIE",
+    LAND: "LAND",
+    SECTOR: "SECTOR",
+}
+
 const questions = [
     {
         q: 'welke kamerleden hebben er afwijkend gestemd in het jaar x?',
         qf: (jaar) => `welke kamerleden hebben er afwijkend gestemd in het jaar ${jaar}`,
-        detail: '', // id van de detail pagina
+        dimensions: [ YEAR ],
         datasets: [
             {
                 name: 'Tweedekamer gegevensmagazijn',
@@ -33,7 +41,7 @@ const questions = [
                 }
             }
         ],
-        viz: [
+        viz: [ // relevante visualisaties
             {
                 name: "STEMGEDRAG TWEEDE KAMER 2013-2016 NADER BEKEKEN"
                 link: "http://www.datagraver.com/case/stemgedrag-tweede-kamer-2013-2016-nader-bekeken"
@@ -42,6 +50,7 @@ const questions = [
     },
     {
         q: 'Welk kamerlid heeft wetsvoorstel x voorgesteld?',
+        dimensions: [ KAMERLID ],
         qf: (jaar) => () => `Welk kamerlid heeft wetsvoorstel ${x} voorgesteld?`
     },
     {
@@ -52,7 +61,19 @@ const questions = [
         q: 'Hoe groot is fractiediscipline dit jaar voor fractie x?',
         qf: () => `Hoe groot is fractiediscipline dit jaar voor fractie x?`.
     }
+    {
+        q: 'Hoeveel geeft nederland uit aan ontwikkelingsgeld in x',
+        qf: (land) => `Hoeveel geeft nederland uit aan ontwikkelingsgeld in ${land}`,
+        dimensions: [ LAND ],
+    },
+    {
+        q: 'Hoeveel geeft nederland uit aan ontwikkelingsgeld in x in sector y',
+        qf: (land) => `Hoeveel geeft nederland uit aan ontwikkelingsgeld in ${land} in sector ${SECTOR}`,
+        dimensions: [ LAND, SECTOR ],
+    },
 ]
+
+const questionList = questions.map(q => )
 
 function escapeRegexCharacters(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
