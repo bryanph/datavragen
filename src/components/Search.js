@@ -139,11 +139,41 @@ const questions = [
         q: 'Hoeveel geeft nederland uit aan ontwikkelingsgeld in x',
         qf: (land) => `Hoeveel geeft nederland uit aan ontwikkelingsgeld in ${land}`,
         dimensions: [ LAND ],
+        datasets: [
+            {
+                name: 'IATI Data Ministerie van Buitenlandse Zaken',
+                beschikbaar: false,
+                method: {
+                    description: "beschikbaar op https://www.iatiregistry.org/publisher/about/minbuza_nl"
+                },
+            }
+        ],
+        viz: [ // relevante visualisaties
+            {
+                name: "Openaid.nl locatie visualisatie",
+                link: "https://www.openaid.nl/regions/"
+            },
+        ],
     },
     {
         q: 'Hoeveel geeft nederland uit aan ontwikkelingsgeld sector x',
         qf: (sector) => `Hoeveel geeft nederland uit aan ontwikkelingsgeld in de sector "${sector}"`,
         dimensions: [ SECTOR ],
+        datasets: [
+            {
+                name: 'IATI Data Ministerie van Buitenlandse Zaken',
+                beschikbaar: false,
+                method: {
+                    description: "beschikbaar op https://www.iatiregistry.org/publisher/about/minbuza_nl"
+                },
+            }
+        ],
+        viz: [ // relevante visualisaties
+            {
+                name: "Openaid.nl sector visualisatie",
+                link: "https://www.openaid.nl/sectors/"
+            },
+        ],
     },
 ]
 
