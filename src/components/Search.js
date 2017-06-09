@@ -134,6 +134,7 @@ class Search extends Component {
       value: '',
       search: false,
       suggestions: [],
+      searchObject: {}
     }
     this.onChange = this.onChange.bind(this)
     this.search = this.search.bind(this)
@@ -167,7 +168,7 @@ class Search extends Component {
     const { value, suggestions } = this.state
     const inputProps = {
       placeholder: "Vul je vraag in",
-      value,
+      value: value,
       onChange: this.onChange
     }
     return (
@@ -186,7 +187,7 @@ class Search extends Component {
               onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
               onSuggestionsClearRequested={this.onSuggestionsClearRequested}
               inputProps={inputProps}/>
-            <Results />
+            <Results result={getSuggestions(value)} />
           </div>
           :
           <SearchMain 
