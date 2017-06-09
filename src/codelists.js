@@ -1,11 +1,3 @@
-export default {
-    partijen,
-    personen,
-    moties,
-    wetsvoorstellen,
-    landen,
-    sector,
-}
 export const partijen = [
 "Van Vliet",
 "Partij voor de Vrijheid",
@@ -674,3 +666,13 @@ export const sector = [
 "District heating and cooling",
 "Biofuel-fired power plants",
 ]
+
+
+export default {
+    partijen,
+    personen,
+    moties,
+    wetsvoorstellen,
+    landen,
+    sector,
+}
