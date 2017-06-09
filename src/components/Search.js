@@ -138,6 +138,7 @@ class Search extends Component {
     }
     this.onChange = this.onChange.bind(this)
     this.search = this.search.bind(this)
+    this.randomize = this.randomize.bind(this)
     this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this)
     this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this)
   }
@@ -164,6 +165,14 @@ class Search extends Component {
       search: true
     })
   }
+
+  randomize() {
+    var random = questionList[Math.floor(Math.random() * questionList.length)].q
+    this.setState({
+      value:random
+    })
+  }
+
   render() {
     const { value, suggestions } = this.state
     const inputProps = {
@@ -174,8 +183,8 @@ class Search extends Component {
     return (
       <ReactCSSTransitionReplace
         transitionName="search"
-        transitionEnterTimeout={100000}
-        transitionLeaveTimeout={100000}>
+        transitionEnterTimeout={2000}
+        transitionLeaveTimeout={2000}>
         {this.state.search ?
           <div className="search-wrap top" key={1}>
             <SearchTopBar
@@ -186,7 +195,8 @@ class Search extends Component {
               suggestions={suggestions}
               onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
               onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-              inputProps={inputProps}/>
+              inputProps={inputProps}
+              randomize={this.randomize}/>
             <Results result={getSuggestions(value)} />
           </div>
           :
@@ -199,7 +209,7 @@ class Search extends Component {
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
             onSuggestionsClearRequested={this.onSuggestionsClearRequested}
             inputProps={inputProps}
-          />
+            randomize={this.randomize} />
         }
       </ReactCSSTransitionReplace>
     )   
@@ -228,7 +238,7 @@ class SearchMain extends Component {
               inputProps={this.props.inputProps}
             />
             <input type="submit" className="button large" value="Zoek" onClick={this.props.search}/>
-            <button className="button large secondary">Random vraag</button>
+            <button className="button large secondary" onClick={this.props.randomize}>Random vraag</button>
           </div>
         </div>
       </div>

@@ -4726,3 +4726,5 @@ a.thumbnail {
       cursor: pointer; }
       .react-autosuggest__suggestions-container ul li:hover {
         background: rgba(0, 0, 0, 0.1); }
+  .react-autosuggest__suggestions-container .react-autosuggest__suggestion--highlighted {
+    background: rgba(0, 0, 0, 0.1); }
