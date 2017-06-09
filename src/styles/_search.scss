@@ -1,0 +1,20 @@
+.search-wrap {
+	width:100%;
+	align-self:center;
+	h1 {
+		margin-bottom:0;
+	}
+	h5 {
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
+	input[type="text"] {
+		padding:1.5rem 1rem;
+		font-size: 1.5rem;
+	}
+	button, .button {
+		margin:.5rem .2rem;
+		font-family: $header-font-family;
+		font-weight: $global-weight-bold;
+	}
+}

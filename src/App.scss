@@ -1,7 +1,10 @@
 @import 'styles/_settings.scss';
 @import 'foundation-sites/scss/foundation';
 
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i|Roboto+Condensed:400,700');
+
 @include foundation-global-styles;
+//@include foundation-grid;
 @include foundation-flex-grid;
 @include foundation-typography;
 @include foundation-forms;
@@ -39,23 +42,19 @@
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 
-.App-logo {
-  animation: App-logo-spin infinite 2s linear;
-  height: 80px;
+
+.App {
+   min-height: 100vh;
+   display: flex;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
+.align-center {
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@import 'styles/_search.scss';
