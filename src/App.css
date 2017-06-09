@@ -6,6 +6,7 @@
  * Licensed under MIT Open Source
  */
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i|Roboto+Condensed:400,700");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
        ========================================================================== */
@@ -4694,13 +4695,39 @@ a.thumbnail {
     margin-right: .2rem; }
 
 .results-wrap {
-  padding-top: 1rem; }
-  .results-wrap .result h2, .results-wrap .result h5 {
+  padding-top: 2rem; }
+  .results-wrap .results h2, .results-wrap .results h4 {
     text-align: center; }
   .results-wrap .first-col {
     border-right: 1px solid #e6e6e6; }
   .results-wrap .result-vraag {
     margin-bottom: 2rem; }
+
+.result-visualizations h4, .result-datasets h4 {
+  margin-bottom: 1.8rem; }
+
+.result {
+  display: flex;
+  margin: 1rem 0; }
+  .result .icon {
+    flex: 0 0 3rem;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #cacaca;
+    color: #fefefe;
+    margin-right: 1rem; }
+    .result .icon i {
+      font-size: 2rem; }
+  .result h5 {
+    margin-bottom: .5rem; }
+  .result h6 {
+    margin-bottom: 0; }
+  .result p {
+    margin-bottom: .5rem; }
 
 .search-enter .search-topbar {
   animation-delay: 1s; }

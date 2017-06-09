@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import cn from 'classnames'
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 import ReactCSSTransitionReplace from 'react-css-transition-replace';
 
 import _ from 'lodash'

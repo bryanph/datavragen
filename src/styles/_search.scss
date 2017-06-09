@@ -59,8 +59,8 @@
 
 .results-wrap {
 	padding-top:2rem;
-	.result {
-		h2, h5 {
+	.results {
+		h2, h4 {
 			text-align: center;
 		}
 	}
@@ -69,6 +69,37 @@
 	}
 	.result-vraag {
 		margin-bottom: 2rem;
+	}
+}
+.result-visualizations h4, .result-datasets h4 {
+	margin-bottom:1.8rem;
+}
+.result {
+	display:flex;
+	margin:1rem 0;
+	.icon {
+		flex:0 0 3rem;
+		height: 3rem;
+		width: 3rem;
+		display: flex;
+		align-items:center;
+		justify-content: center;
+		border-radius:50%;
+		background:$medium-gray;
+		color:$white;
+		margin-right: 1rem;
+		i {
+			font-size: 2rem;
+		}
+	}
+	h5 {
+		margin-bottom:.5rem;
+	}
+	h6 {
+		margin-bottom: 0;
+	}
+	p {
+		margin-bottom: .5rem;
 	}
 }
 

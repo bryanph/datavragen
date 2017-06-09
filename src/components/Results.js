@@ -13,18 +13,23 @@ export class Dataset extends React.Component {
         if (!dataset) return null
 
         return (
-            <div className="result-dataset">
-                <div className="dataset-name">
-                    <h2>{ dataset.name }</h2>
-                </div>
+            <div className="result result-dataset">
+            	<div className="icon">
+            		<i className="material-icons">group_work</i>
+            	</div>
+            	<div className="set">
+	                <div className="dataset-name">
+	                    <h5>{ dataset.name }</h5>
+	                </div>
 
-                <div className="dataset-method">
-                    <h3>Methodologie</h3>
-                    { dataset.method.description }
-                </div>
-                <div className="dataset-type">
-                    <h3>Type</h3>
-                    { dataset.availability.type }
+	                <div className="dataset-method">
+	                    <h6>Methodologie</h6>
+	                    <p>{ dataset.method.description }</p>
+	                </div>
+	                <div className="dataset-type">
+	                    <h6>Type</h6>
+	                    <p>{ dataset.availability.type }</p>
+	                </div>
                 </div>
             </div>
         )
@@ -42,15 +47,20 @@ export class Visualization extends React.Component {
         if (!viz) return null
 
         return (
-            <div className="result-viz">
-                <div className="viz-name">
-                    <h2>{ viz.name }</h2>
-                </div>
+            <div className="result result-viz">
+            	<div className="icon">
+            		<i className="material-icons">show_chart</i>
+            	</div>
+            	<div className="set">
+	                <div className="viz-name">
+	                    <h5>{ viz.name }</h5>
+	                </div>
 
-                <div className="viz-link">
-                    <h3>Methodologie</h3>
-                    { viz.link }
-                </div>
+	                <div className="viz-link">
+	                    <h6>Methodologie</h6>
+	                    <p>{ viz.link }</p>
+	                </div>
+	            </div>
             </div>
         )
     }
@@ -75,23 +85,23 @@ export class ResultPage extends React.Component {
         if (!datasets) datasets = []
 
         return (
-            <div className="result row">
+            <div className="results row">
             	<div className="columns small-12">
 	                <div className="result-vraag">
 	                    <h2>Vraag</h2>
-                    	<h5 className="subheader">{ q }</h5>
+                    	<h4 className="subheader">{ q }</h4>
 	                </div>
 	                <h2>Antwoord</h2>
 	                <div className="row">
 	                	<div className="columns medium-6 first-col">
 			                <div className="result-datasets">
-			                    <h5>De volgende datasets geven antwoord</h5>
+			                    <h4>De volgende datasets kunnen antwoord geven</h4>
 			                    { datasets.map((d) => <Dataset dataset={d} />) }
 			                </div>
 			            </div>
 	                	<div className="columns medium-6">
 			                <div className="result-visualizations">
-			                    <h5>De volgende visualisatie bronnen zijn beschikbaar</h5>
+			                    <h4>De volgende visualisatie bronnen zijn beschikbaar</h4>
 			                    { viz.map((d) => <Visualization dataset={d} />) }
 			                </div>
 			            </div>
