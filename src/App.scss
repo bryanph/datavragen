@@ -44,17 +44,17 @@
 
 
 .App {
-   min-height: 100vh;
-   display: flex;
+   > span, > span > span {
+    min-height: 100vh;
+    display: flex;
+    width: 100%;
+    flex-wrap:wrap;
+   }
 }
 
 .align-center {
   justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
+@import 'styles/_animate.scss';
 @import 'styles/_search.scss';

@@ -1,6 +1,7 @@
 .search-wrap {
 	width:100%;
 	align-self:center;
+	transition:all .4s ease;
 	h1 {
 		margin-bottom:0;
 	}
@@ -11,10 +12,66 @@
 	input[type="text"] {
 		padding:1.5rem 1rem;
 		font-size: 1.5rem;
+		width: 40rem;
+		margin:0 auto 1rem auto;
 	}
 	button, .button {
 		margin:.5rem .2rem;
 		font-family: $header-font-family;
 		font-weight: $global-weight-bold;
+	}
+	.search-header {
+		transition:all .4s ease;
+	}
+	&.top {
+		align-self:flex-start;
+	}
+}
+
+.search-topbar {
+	padding-top:1rem;
+	padding-bottom:1rem;
+	box-shadow:1px 1px 6px rgba(0,0,0,.3);
+	position: relative;
+	.search-header {
+		opacity: 0;
+		margin-top:-5rem;
+	}
+	.search-box {
+		display: flex;
+		input[type="text"] {
+			width: 100%;
+			float:left;
+			margin:0 .2rem 0 0;
+		}
+		button, .button {
+			margin:0 .2rem;
+			flex: 0 0 10rem;
+			padding:0;
+		}
+	}
+}
+
+.results-wrap {
+	padding-top:1rem;
+}
+
+.search-enter {
+	.search-topbar {
+		@extend .animated;
+		@extend .fadeInDown;
+		animation-delay: 1s;
+	}
+	.results-wrap {
+		@extend .animated;
+		@extend .fadeInUp;
+		animation-delay: .5s;
+	}
+}
+
+.search-leave {
+    &#search-full {
+		@extend .animated;
+		@extend .fadeOutUp;
 	}
 }
