@@ -3,6 +3,8 @@ import cn from 'classnames'
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 import ReactCSSTransitionReplace from 'react-css-transition-replace';
 
+import _ from 'lodash'
+
 import Results from './Results'
 
 import Autosuggest from 'react-autosuggest';
@@ -72,18 +74,25 @@ const questions = [
     },
     {
         q: 'Hoeveel geeft nederland uit aan ontwikkelingsgeld in x in sector y',
-        qf: (land) => `Hoeveel geeft nederland uit aan ontwikkelingsgeld in ${land} in sector ${SECTOR}`,
+        qf: (land) => `Hoeveel geeft nederland uit aan ontwikkelingsgeld in ${sector} in sector`,
         dimensions: [ LAND, SECTOR ],
     },
 ]
 
 
-const questionsList = questions.map(q => {
-    
+let questionsList = questions.map(q => {
 
+    const subqs = dimensions[0].map(d1 => {
+        const newq =  q.qf(d1)
+
+        return Object.assign({},
+            q,
+            q: newq
+        )
+    })
 })
 
-const questionList = questions.map(q => )
+questionsList = questionsList.flatMap()
 
 function escapeRegexCharacters(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
