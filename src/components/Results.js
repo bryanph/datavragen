@@ -1,16 +1,5 @@
 import React, { Component } from 'react'
 
-export class Score extends Component {
-  render() {
-    return (
-      <div className="detail-wrap columns small-12">
-        <h2>Availability score</h2>
-        <p>Bla</p>
-      </div>
-    )
-  }
-}
-
 export class Dataset extends React.Component {
     constructor(props) {
         super(props)
@@ -86,17 +75,27 @@ export class ResultPage extends React.Component {
         if (!datasets) datasets = []
 
         return (
-            <div className="result">
-                <div className="result-vraag">
-                    Vraag: { q }
-                </div>
-                <div className="result-datasets">
-                    <span>Deze vraag kan beantwoord worden met behulp van de volgende datasets</span>
-                    { datasets.map((d) => <Dataset dataset={d} />) }
-                </div>
-                <div className="result-visualizations">
-                    <span>De volgende visualisatie bronnen zijn beschikbaar</span>
-                    { viz.map((d) => <Visualization dataset={d} />) }
+            <div className="result row">
+            	<div className="columns small-12">
+	                <div className="result-vraag">
+	                    <h2>Vraag</h2>
+                    	<h5 className="subheader">{ q }</h5>
+	                </div>
+	                <h2>Antwoord</h2>
+	                <div className="row">
+	                	<div className="columns medium-6 first-col">
+			                <div className="result-datasets">
+			                    <h5>De volgende datasets geven antwoord</h5>
+			                    { datasets.map((d) => <Dataset dataset={d} />) }
+			                </div>
+			            </div>
+	                	<div className="columns medium-6">
+			                <div className="result-visualizations">
+			                    <h5>De volgende visualisatie bronnen zijn beschikbaar</h5>
+			                    { viz.map((d) => <Visualization dataset={d} />) }
+			                </div>
+			            </div>
+			        </div>
                 </div>
             </div>
         )

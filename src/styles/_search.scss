@@ -59,6 +59,17 @@
 
 .results-wrap {
 	padding-top:1rem;
+	.result {
+		h2, h5 {
+			text-align: center;
+		}
+	}
+	.first-col {
+		border-right:1px solid $light-gray;
+	}
+	.result-vraag {
+		margin-bottom: 2rem;
+	}
 }
 
 .search-enter {

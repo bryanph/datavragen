@@ -197,7 +197,9 @@ class Search extends Component {
               onSuggestionsClearRequested={this.onSuggestionsClearRequested}
               inputProps={inputProps}
               randomize={this.randomize}/>
-            <ResultPage result={getSuggestions(value)} />
+              <div className="results-wrap">
+                <ResultPage result={getSuggestions(value)} />
+              </div>
           </div>
           :
           <SearchMain 
@@ -261,7 +263,7 @@ class SearchTopBar extends Component {
               inputProps={this.props.inputProps}
             />
             <input type="submit" className="button large" value="Zoek" onClick={this.props.search}/>
-            <button className="button large secondary">Random vraag</button>
+            <button className="button large secondary" onClick={this.props.randomize}>Random vraag</button>
           </div>
         </div>
       </div>
