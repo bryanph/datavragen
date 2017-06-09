@@ -11,15 +11,15 @@ import Autosuggest from 'react-autosuggest';
 
 import codelists from '../codelists.js'
 
-// Imagine you have a list of languages that you'd like to autosuggest.
-const questionList = [
-  {
-    q: 'Hoe lang is een Chinees?',
-  },
-  {
-    q: 'Wie had de meeste nevenfuncties in de Tweede Kamer?',
-  },
-];
+// // Imagine you have a list of languages that you'd like to autosuggest.
+// const questionList = [
+//   {
+//     q: 'Hoe lang is een Chinees?',
+//   },
+//   {
+//     q: 'Wie had de meeste nevenfuncties in de Tweede Kamer?',
+//   },
+// ];
 
 const YEAR = [ 2013, 2014, 2015, 2016, 2017 ]
 const KAMERLID = codelists.personen
@@ -73,26 +73,30 @@ const questions = [
         dimensions: [ LAND ],
     },
     {
-        q: 'Hoeveel geeft nederland uit aan ontwikkelingsgeld in x in sector y',
-        qf: (land) => `Hoeveel geeft nederland uit aan ontwikkelingsgeld in ${land} in sector`,
-        dimensions: [ LAND, SECTOR ],
+        q: 'Hoeveel geeft nederland uit aan ontwikkelingsgeld in sector x',
+        qf: (sector) => `Hoeveel geeft nederland uit aan ontwikkelingsgeld in ${sector} in sector`,
+        dimensions: [ SECTOR ],
     },
 ]
 
 
-let questionsList = questions.map(q => {
+let questionList = questions.map(q => {
 
     const subqs = q.dimensions[0].map(d1 => {
         const newq =  q.qf(d1)
 
         return Object.assign({},
             q,
-            q: newq
+            { q: newq }
         )
     })
+
+    return subqs
 })
 
-questionsList = _.flatMap(questionsList)
+questionList = _.flatMap(questionList)
+
+// console.log(questionList);
 
 function escapeRegexCharacters(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
