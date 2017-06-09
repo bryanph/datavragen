@@ -50,6 +50,11 @@
 			padding:0;
 		}
 	}
+	.react-autosuggest__container {
+		width: 100%;
+		max-width: 100%;
+		margin-right: .2rem;
+	}
 }
 
 .results-wrap {
@@ -87,7 +92,7 @@
 	background:rgba(255,255,255,.8);
 	text-align:left;
 	color:$dark-gray;
-	margin-top:-1rem;
+	top:3rem;
 	border-top:0;
 	ul {
 		list-style: none;
