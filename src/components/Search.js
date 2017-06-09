@@ -59,12 +59,12 @@ const questions = [
     },
     {
         q: 'Welk kamerlid heeft motie x voorgesteld?',
-        qf: (motie) => `Welk kamerlid heeft motie ${motie} voorgesteld?`,
+        qf: (motie) => `Welk kamerlid heeft motie "${motie}" voorgesteld?`,
         dimensions: [ MOTIE ],
     },
     {
         q: 'Hoe groot is fractiediscipline dit jaar voor fractie x?',
-        qf: (fractie) => `Hoe groot is fractiediscipline dit jaar voor fractie ${fractie}?`,
+        qf: (fractie) => `Hoe groot is de fractiediscipline dit jaar voor ${fractie}?`,
         dimensions: [ FRACTIE ],
     },
     {
@@ -73,8 +73,8 @@ const questions = [
         dimensions: [ LAND ],
     },
     {
-        q: 'Hoeveel geeft nederland uit aan ontwikkelingsgeld in sector x',
-        qf: (sector) => `Hoeveel geeft nederland uit aan ontwikkelingsgeld in ${sector} in sector`,
+        q: 'Hoeveel geeft nederland uit aan ontwikkelingsgeld sector x',
+        qf: (sector) => `Hoeveel geeft nederland uit aan ontwikkelingsgeld in de sector "${sector}"`,
         dimensions: [ SECTOR ],
     },
 ]
