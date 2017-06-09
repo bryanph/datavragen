@@ -101,6 +101,10 @@ export class ResultPage extends React.Component {
 	            viz,
 	        } = result
 
+	        console.log(this.props.result)
+	        console.log('viz is')
+
+
 	        if (!viz) viz = []
 	        if (!datasets) datasets = []
 
@@ -122,7 +126,7 @@ export class ResultPage extends React.Component {
 		                	<div className="columns medium-6">
 				                <div className="result-visualizations">
 				                    <h4>De volgende visualisatie bronnen zijn beschikbaar</h4>
-				                    { viz.map((d) => <Visualization dataset={d} />) }
+				                    { viz.map((d) => <Visualization viz={d} />) }
 				                </div>
 				            </div>
 				        </div>

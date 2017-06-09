@@ -105,6 +105,13 @@
 		margin-bottom: .5rem;
 	}
 }
+.result-visualizations {
+	.result {
+		.icon {
+			background:$primary-color;
+		}
+	}
+}
 
 .search-enter {
 	.search-topbar {

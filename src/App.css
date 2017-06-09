@@ -4731,6 +4731,9 @@ a.thumbnail {
   .result p {
     margin-bottom: .5rem; }
 
+.result-visualizations .result .icon {
+  background: #1779ba; }
+
 .search-enter .search-topbar {
   animation-delay: 1s; }
 
