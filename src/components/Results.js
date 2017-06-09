@@ -1,22 +1,6 @@
 import React, { Component } from 'react'
 
-class Results extends Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    return (
-      <div className="results-wrap row">
-        <Score />
-      </div>
-    );
-  }
-}
-
-export default Results;
-
-
-class Score extends Component {
+export class Score extends Component {
   render() {
     return (
       <div className="detail-wrap columns small-12">
@@ -27,7 +11,7 @@ class Score extends Component {
   }
 }
 
-class Dataset extends React.Component {
+export class Dataset extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -53,11 +37,8 @@ class Dataset extends React.Component {
         )
     }
 }
-Dataset.propTypes = {
-    
-}
 
-class Visualization extends React.Component {
+export class Visualization extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -81,18 +62,19 @@ class Visualization extends React.Component {
 }
 
 
-class ResultPage extends React.Component {
+export class ResultPage extends React.Component {
     constructor(props) {
         super(props)
     }
 
     render() {
+        const result = this.props.result[0]
+
         const { 
             q,
-            varType,
             datasets,
             viz,
-        } = this.props
+        } = result
 
         return (
             <div className="result">
