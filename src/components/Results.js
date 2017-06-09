@@ -19,6 +19,10 @@ export class Dataset extends React.Component {
     render() {
         const { dataset } = this.props
 
+        console.log('in dataset', dataset);
+
+        if (!dataset) return null
+
         return (
             <div className="result-dataset">
                 <div className="dataset-name">
@@ -31,7 +35,7 @@ export class Dataset extends React.Component {
                 </div>
                 <div className="dataset-type">
                     <h3>Type</h3>
-                    { dataset.availability }
+                    { dataset.availability.type }
                 </div>
             </div>
         )
@@ -45,6 +49,8 @@ export class Visualization extends React.Component {
 
     render() {
         const { viz } = this.props
+
+        if (!viz) return null
 
         return (
             <div className="result-viz">
@@ -70,11 +76,14 @@ export class ResultPage extends React.Component {
     render() {
         const result = this.props.result[0]
 
-        const { 
+        let { 
             q,
             datasets,
             viz,
         } = result
+
+        if (!viz) viz = []
+        if (!datasets) datasets = []
 
         return (
             <div className="result">
