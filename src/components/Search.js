@@ -142,7 +142,7 @@ const questions = [
         datasets: [
             {
                 name: 'IATI Data Ministerie van Buitenlandse Zaken',
-                beschikbaar: false,
+                beschikbaar: true,
                 method: {
                     description: "beschikbaar op https://www.iatiregistry.org/publisher/about/minbuza_nl"
                 },
@@ -162,8 +162,8 @@ const questions = [
         datasets: [
             {
                 name: 'IATI Data Ministerie van Buitenlandse Zaken',
-                beschikbaar: false,
-                method: {
+                beschikbaar: true,
+                method: { 
                     description: "beschikbaar op https://www.iatiregistry.org/publisher/about/minbuza_nl"
                 },
             }
