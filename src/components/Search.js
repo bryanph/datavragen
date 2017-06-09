@@ -54,8 +54,8 @@ const questions = [
     },
     {
         q: 'Welk kamerlid heeft wetsvoorstel x voorgesteld?',
-        dimensions: [ KAMERLID ],
-        qf: (jaar) => `Welk kamerlid heeft wetsvoorstel ${jaar} voorgesteld?`
+        dimensions: [ VOORSTEL ],
+        qf: (voorstel) => `Welk kamerlid heeft wetsvoorstel "${voorstel}" voorgesteld?`
     },
     {
         q: 'Welk kamerlid heeft motie x voorgesteld?',
