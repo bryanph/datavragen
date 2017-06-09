@@ -26,6 +26,7 @@ const LAND = codelists.landen
 const SECTOR = codelists.sector
 const MOTIE = codelists.moties
 const VOORSTEL = codelists.wetsvoorstellen
+const KAMER = [ 'eerste' ]
 
 const questions = [
     {
@@ -35,12 +36,10 @@ const questions = [
         datasets: [
             {
                 name: 'Tweedekamer gegevensmagazijn',
+                beschikbaar: false,
                 method: {
-                    description: "Deze data kan opgehaald worden door alle XML te parsen uit de REST API met de volgende filters:"
+                    description: "Er is geen persoonlijk kiesgedrag beschikbaar in deze dataset"
                 },
-                availability: {
-                    type: 'derived', // niet direct filterbaar (maar data is te verkrijgen)
-                }
             }
         ],
         viz: [ // relevante visualisaties
@@ -48,22 +47,93 @@ const questions = [
                 name: "STEMGEDRAG TWEEDE KAMER 2013-2016 NADER BEKEKEN",
                 link: "http://www.datagraver.com/case/stemgedrag-tweede-kamer-2013-2016-nader-bekeken"
             },
-        ]
-    },
-    {
-        q: 'Welk kamerlid heeft wetsvoorstel x voorgesteld?',
-        dimensions: [ VOORSTEL ],
-        qf: (voorstel) => `Welk kamerlid heeft wetsvoorstel "${voorstel}" voorgesteld?`
+        ],
+        toelichting: ""
     },
     {
         q: 'Welk kamerlid heeft motie x voorgesteld?',
         qf: (motie) => `Welk kamerlid heeft motie "${motie}" voorgesteld?`,
         dimensions: [ MOTIE ],
+        datasets: [
+            {
+                name: 'Tweedekamer gegevensmagazijn',
+                beschikbaar: true,
+                method: {
+                    description: "Deze data is verkrijgbaar via het \"ParlementairDocument\" endpoint: https://gegevensmagazijn.tweedekamer.nl/OData/v1/ParlementairDocument?$filter=Soort%20eq%20%27Motie%27"
+                },
+                availability: {
+                    type: 'direct', // niet direct filterbaar (maar data is te verkrijgen)
+                }
+            }
+        ],
+        viz: [ // relevante visualisaties
+            {
+                name: "tweedekamer.nl",
+                link: "https://www.tweedekamer.nl/kamerstukken/moties"
+            },
+        ],
+        toelichting: "",
+    },
+    {
+        q: 'Wat is het percentage afwezigheid voor fractie x?',
+        qf: (fractie) => `Wat is het percentage afwezigheid voor fractie ${fractie}`,
+        dimensions: [ FRACTIE ],
+        datasets: [
+            {
+                name: 'Tweedekamer gegevensmagazijn',
+                beschikbaar: false,
+                method: {
+                    description: "Geen afwezigheids data voor verschillende activiteiten aanwezig."
+                },
+            }
+        ],
+        viz: [ // relevante visualisaties
+            {
+                name: "nrc.nl nieuwsartikel",
+                link: "https://www.nrc.nl/nieuws/2013/09/02/linkse-kamerleden-minder-aanwezig-dan-rechtse-a1431924"
+            },
+        ],
+        toelichting: "",
     },
     {
         q: 'Hoe groot is fractiediscipline dit jaar voor fractie x?',
         qf: (fractie) => `Hoe groot is de fractiediscipline dit jaar voor ${fractie}?`,
         dimensions: [ FRACTIE ],
+        datasets: [
+            {
+                name: 'Tweedekamer gegevensmagazijn',
+                beschikbaar: false,
+                method: {
+                    description: "Stemmingen ophalen per fractielid is niet mogelijk."
+                },
+            }
+        ],
+        viz: [ // relevante visualisaties
+            {
+                name: "datagraver.com stemgedrag",
+                link: "http://www.datagraver.com/case/stemgedrag-tweede-kamer-2013-2016-nader-bekeken"
+            },
+        ],
+    },
+    {
+        q: 'Welke wetsvoorstellen zijn niet door de eerste kamer gekomen?',
+        qf: (kamer) => `Welke wetsvoorstellen zijn niet door de ${kamer} kamer gekomen?`,
+        dimensions: [ KAMER ],
+        datasets: [
+            {
+                name: 'Tweedekamer gegevensmagazijn',
+                beschikbaar: false,
+                method: {
+                    description: "Geen open data eerste kamer beschikbaar."
+                },
+            }
+        ],
+        viz: [ // relevante visualisaties
+            {
+                name: "eerstekamer.nl",
+                link: "https://www.eerstekamer.nl/begrip/verworpen_door_de_eerste_kamer"
+            },
+        ],
     },
     {
         q: 'Hoeveel geeft nederland uit aan ontwikkelingsgeld in x',
