@@ -7,6 +7,8 @@ import Results from './Results'
 
 import Autosuggest from 'react-autosuggest';
 
+import codelists from '../codelists.js'
+
 // Imagine you have a list of languages that you'd like to autosuggest.
 const questionList = [
   {
@@ -18,11 +20,13 @@ const questionList = [
 ];
 
 const dimensions = {
-    YEAR: "YEAR",
-    KAMERLID: "KAMERLID",
-    FRACTIE: "FRACTIE",
-    LAND: "LAND",
-    SECTOR: "SECTOR",
+    YEAR: [ 2013, 2014, 2015, 2016, 2017 ],
+    KAMERLID: codelists.personen,
+    FRACTIE: codelists.partijen,
+    LAND: codelists.landen,
+    SECTOR: codelists.sector,
+    MOTIE: codelists.moties,
+    VOORSTEL: codelists.wetsvoorstellen,
 }
 
 const questions = [
@@ -72,6 +76,12 @@ const questions = [
         dimensions: [ LAND, SECTOR ],
     },
 ]
+
+
+const questionsList = questions.map(q => {
+    
+
+})
 
 const questionList = questions.map(q => )
 
