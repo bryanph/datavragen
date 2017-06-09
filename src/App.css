@@ -4697,3 +4697,28 @@ a.thumbnail {
 
 .search-enter .results-wrap {
   animation-delay: .5s; }
+
+.react-autosuggest__container {
+  position: relative;
+  max-width: 40rem;
+  margin: 0 auto; }
+
+.react-autosuggest__suggestions-container {
+  width: 100%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  color: #8a8a8a;
+  margin-top: -1rem;
+  border-top: 0; }
+  .react-autosuggest__suggestions-container ul {
+    list-style: none;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    margin: 0; }
+    .react-autosuggest__suggestions-container ul li {
+      font-size: 1.2rem;
+      padding: .5rem 1rem;
+      transition: all .3s ease;
+      cursor: pointer; }
+      .react-autosuggest__suggestions-container ul li:hover {
+        background: rgba(0, 0, 0, 0.1); }

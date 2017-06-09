@@ -22,20 +22,20 @@ const getSuggestions = value => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
-  return inputLength === 0 ? [] : questionList.filter(lang =>
-    lang.name.toLowerCase().slice(0, inputLength) === inputValue
+  return inputLength === 0 ? [] : questionList.filter(question =>
+    question.q.toLowerCase().slice(0, inputLength) === inputValue
   );
 };
 
 // When suggestion is clicked, Autosuggest needs to populate the input element
 // based on the clicked suggestion. Teach Autosuggest how to calculate the
 // input value for every given suggestion.
-const getSuggestionValue = suggestion => suggestion.name;
+const getSuggestionValue = suggestion => suggestion;
 
 // Use your imagination to render suggestions.
 const renderSuggestion = suggestion => (
-  <div>
-    {suggestion.name}
+  <div className="suggestion">
+    {suggestion.q}
   </div>
 );
 
@@ -50,16 +50,19 @@ class Search extends Component {
       search: false,
       suggestions: [],
     }
-    this.enterQuestion = this.enterQuestion.bind(this)
+    this.onQuestionChange = this.onQuestionChange.bind(this)
     this.search = this.search.bind(this)
+    this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this)
+    this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this)
   }
-  enterQuestion(e) {
+  onQuestionChange(e) {
     this.setState({
       question: e.target.value
     })
   }
 
   onSuggestionsFetchRequested({ value }) {
+    console.log(value)
     this.setState({
       suggestions: getSuggestions(value)
     })
@@ -90,9 +93,12 @@ class Search extends Component {
           <SearchMain 
             key={2} 
             question={this.state.question}
-            enterQuestion={this.enterQuestion} 
+            onQuestionChange={this.onQuestionChange} 
             search={this.search}
-            suggestions={suggestions}/>
+            suggestions={this.state.suggestions}
+            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+          />
         }
       </ReactCSSTransitionReplace>
     )   
@@ -102,6 +108,11 @@ class Search extends Component {
 
 class SearchMain extends Component {
   render() {
+    const inputProps = {
+      placeholder: 'Vul je vraag in',
+      value: this.props.question,
+      onChange: this.props.onQuestionChange
+    }
     return (
       <div id="search-full" className='search-wrap'>
         <div className="row">
@@ -113,15 +124,13 @@ class SearchMain extends Component {
         <div className="row align-center">
           <div className="search-box columns small-12 text-center">
             <Autosuggest
-              suggestions={suggestions}
-              onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-              onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+              suggestions={this.props.suggestions}
+              onSuggestionsFetchRequested={this.props.onSuggestionsFetchRequested}
+              onSuggestionsClearRequested={this.props.onSuggestionsClearRequested}
               getSuggestionValue={getSuggestionValue}
               renderSuggestion={renderSuggestion}
               inputProps={inputProps}
             />
-
-            <input type="text" id="search" placeholder="Vul je vraag in" value={this.props.question} onChange={this.props.enterQuestion} />
             <input type="submit" className="button large" value="Zoek" onClick={this.props.search}/>
             <button className="button large secondary">Random vraag</button>
           </div>
