@@ -5,7 +5,7 @@ import ReactCSSTransitionReplace from 'react-css-transition-replace';
 
 import _ from 'lodash'
 
-import Results from './Results'
+import { ResultPage } from './Results'
 
 import Autosuggest from 'react-autosuggest';
 
@@ -197,7 +197,7 @@ class Search extends Component {
               onSuggestionsClearRequested={this.onSuggestionsClearRequested}
               inputProps={inputProps}
               randomize={this.randomize}/>
-            <Results result={getSuggestions(value)} />
+            <ResultPage result={getSuggestions(value)} />
           </div>
           :
           <SearchMain 
