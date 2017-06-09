@@ -73,41 +73,56 @@ export class ResultPage extends React.Component {
     }
 
     render() {
-        const result = this.props.result[0]
+    	if (typeof this.props.result[0] === 'undefined') {
+    		return (
+    			<div className="results row">
+	            	<div className="columns small-12">
+		                <div className="result-vraag">
+		                    <h2>Daar weet ik geen antwoord op</h2>
+	                    	<h4 className="subheader">Vraag me wat anders</h4>
+		                </div>
+		            </div>
+		        </div>
+    		)
+		}
 
-        let { 
-            q,
-            datasets,
-            viz,
-        } = result
+		else {
+	        const result = this.props.result[0]
 
-        if (!viz) viz = []
-        if (!datasets) datasets = []
+	        let { 
+	            q,
+	            datasets,
+	            viz,
+	        } = result
 
-        return (
-            <div className="results row">
-            	<div className="columns small-12">
-	                <div className="result-vraag">
-	                    <h2>Vraag</h2>
-                    	<h4 className="subheader">{ q }</h4>
+	        if (!viz) viz = []
+	        if (!datasets) datasets = []
+
+	        return (
+	            <div className="results row">
+	            	<div className="columns small-12">
+		                <div className="result-vraag">
+		                    <h2>Vraag</h2>
+	                    	<h4 className="subheader">{ q }</h4>
+		                </div>
+		                <h2>Antwoord</h2>
+		                <div className="row">
+		                	<div className="columns medium-6 first-col">
+				                <div className="result-datasets">
+				                    <h4>De volgende datasets kunnen antwoord geven</h4>
+				                    { datasets.map((d) => <Dataset dataset={d} />) }
+				                </div>
+				            </div>
+		                	<div className="columns medium-6">
+				                <div className="result-visualizations">
+				                    <h4>De volgende visualisatie bronnen zijn beschikbaar</h4>
+				                    { viz.map((d) => <Visualization dataset={d} />) }
+				                </div>
+				            </div>
+				        </div>
 	                </div>
-	                <h2>Antwoord</h2>
-	                <div className="row">
-	                	<div className="columns medium-6 first-col">
-			                <div className="result-datasets">
-			                    <h4>De volgende datasets kunnen antwoord geven</h4>
-			                    { datasets.map((d) => <Dataset dataset={d} />) }
-			                </div>
-			            </div>
-	                	<div className="columns medium-6">
-			                <div className="result-visualizations">
-			                    <h4>De volgende visualisatie bronnen zijn beschikbaar</h4>
-			                    { viz.map((d) => <Visualization dataset={d} />) }
-			                </div>
-			            </div>
-			        </div>
-                </div>
-            </div>
-        )
+	            </div>
+	        )
+	    }
     }
 }

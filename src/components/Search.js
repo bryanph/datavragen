@@ -159,9 +159,6 @@ class Search extends Component {
   }
 
   search() {
-    if (this.state.value === '') {
-      return false
-    }
     this.setState({
       search: true
     })
