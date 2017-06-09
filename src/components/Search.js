@@ -142,10 +142,13 @@ const questions = [
         datasets: [
             {
                 name: 'IATI Data Ministerie van Buitenlandse Zaken',
-                beschikbaar: false,
+                beschikbaar: true,
                 method: {
-                    description: "beschikbaar op https://www.iatiregistry.org/publisher/about/minbuza_nl"
+                    description: "Deze data is verkrijgbaar via <a href=\"https://www.iatiregistry.org/publisher/about/minbuza_nl\">de IATI registry</a>"
                 },
+                availability: {
+                    type: 'direct', // niet direct filterbaar (maar data is te verkrijgen)
+                }
             }
         ],
         viz: [ // relevante visualisaties
@@ -162,10 +165,13 @@ const questions = [
         datasets: [
             {
                 name: 'IATI Data Ministerie van Buitenlandse Zaken',
-                beschikbaar: false,
+                beschikbaar: true,
                 method: {
-                    description: "beschikbaar op https://www.iatiregistry.org/publisher/about/minbuza_nl"
+                    description: "Deze data is verkrijgbaar via <a href=\"https://www.iatiregistry.org/publisher/about/minbuza_nl\">de IATI registry</a>"
                 },
+                availability: {
+                    type: 'direct', // niet direct filterbaar (maar data is te verkrijgen)
+                }
             }
         ],
         viz: [ // relevante visualisaties
