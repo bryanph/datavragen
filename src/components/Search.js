@@ -92,7 +92,7 @@ let questionsList = questions.map(q => {
     })
 })
 
-questionsList = questionsList.flatMap()
+questionsList = _.flatMap(questionsList)
 
 function escapeRegexCharacters(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
