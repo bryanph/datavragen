@@ -55,11 +55,11 @@ const questions = [
     {
         q: 'Welk kamerlid heeft wetsvoorstel x voorgesteld?',
         dimensions: [ KAMERLID ],
-        qf: (jaar) => () => `Welk kamerlid heeft wetsvoorstel ${x} voorgesteld?`
+        qf: (jaar) => `Welk kamerlid heeft wetsvoorstel ${jaar} voorgesteld?`
     },
     {
         q: 'Welk kamerlid heeft motie x voorgesteld?',
-        qf: (jaar) => () => `Welk kamerlid heeft motie ${x} voorgesteld?`
+        qf: (jaar) => `Welk kamerlid heeft motie ${jaar} voorgesteld?`
     },
     {
         q: 'Hoe groot is fractiediscipline dit jaar voor fractie x?',
@@ -72,7 +72,7 @@ const questions = [
     },
     {
         q: 'Hoeveel geeft nederland uit aan ontwikkelingsgeld in x in sector y',
-        qf: (land) => `Hoeveel geeft nederland uit aan ontwikkelingsgeld in ${sector} in sector`,
+        qf: (land) => `Hoeveel geeft nederland uit aan ontwikkelingsgeld in ${land} in sector`,
         dimensions: [ LAND, SECTOR ],
     },
 ]
@@ -80,7 +80,7 @@ const questions = [
 
 let questionsList = questions.map(q => {
 
-    const subqs = dimensions[0].map(d1 => {
+    const subqs = q.dimensions[0].map(d1 => {
         const newq =  q.qf(d1)
 
         return Object.assign({},
